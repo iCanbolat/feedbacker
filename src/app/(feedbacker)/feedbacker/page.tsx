@@ -7,12 +7,17 @@ import { UserFeedbackModal } from '../../../components/UserFeedbackModal';
 
 type Props = {};
 
-const Dashboard = ({
+const Dashboard = async({
   searchParams,
 }: {
   [key: string]: string | string[] | any;
 }) => {
   //fetch public and private feedbacks
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos', {
+    next: { tags: ['todos'] },
+  });
+  const data = await res.json().then((v) => v.slice(0, 3));
+
   return (
     <>
       <div className='h-[90vh] w-full'>
@@ -48,13 +53,3 @@ const Dashboard = ({
 };
 
 export default Dashboard;
-
-//export const generateStaticParams = async () => {
-//  const res = await fetch('https://jsonplaceholder.typicode.com/todos');
-//  const data = await res.json();
-//  return {
-//    props: {
-//      todos: data.slice(0, 5),
-//    },
-//  };
-//};
