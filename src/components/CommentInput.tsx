@@ -44,7 +44,7 @@ const CommentInput = ({ cardType }: Props) => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      feedbackType: [FeedbackType.Bug],
+      feedbackType: [],
       title: '',
     },
   });
@@ -85,7 +85,7 @@ const CommentInput = ({ cardType }: Props) => {
   }
   return (
     <motion.div
-      className='w-full flex justify-center text-black'
+      className='w-full flex justify-center'
       initial={false}
       variants={sidebar}
       animate={toggle ? 'open' : 'closed'}
@@ -95,7 +95,7 @@ const CommentInput = ({ cardType }: Props) => {
           variant='outline'
           onClick={() => setToggle(!toggle)}
         >
-          <ArrowUp className='mr-2' size={22} color='black' strokeWidth={2.25} /> {cardType === 'feedback' ? 'Make Comment' : 'Create Feedback'}
+          <ArrowUp className='mr-2' size={22}  strokeWidth={2.25} /> {cardType === 'feedback' ? 'Make Comment' : 'Create Feedback'}
         </Button>
       ) : (
         <>
@@ -105,12 +105,12 @@ const CommentInput = ({ cardType }: Props) => {
             className='mr-5'
             onClick={() => setToggle(!toggle)}
           >
-            <ArrowDown size={22} color='black' strokeWidth={2.25} />
+            <ArrowDown size={22} strokeWidth={2.25} />
           </Button>
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className='w-2/3 space-y-6 text-center text-black'
+              className='w-2/3 space-y-6 text-center'
             >
               <FormField
                 control={form.control}
@@ -133,7 +133,7 @@ const CommentInput = ({ cardType }: Props) => {
                     <FormControl>
                       <Textarea
                         placeholder='Tell us your feedback...'
-                        className='resize-none text-black'
+                        className='resize-none'
                         {...field}
                       />
                     </FormControl>

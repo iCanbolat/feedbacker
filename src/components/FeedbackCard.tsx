@@ -1,6 +1,14 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
 import CustomVoteUp from './CustomVoteButton';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 type Props = {
   cardType: 'feedback' | 'product';
@@ -9,7 +17,7 @@ type Props = {
 const FeedbackCard = ({ cardType }: Props) => {
   return (
     <>
-      <div className='w-full px-3 bg-white rounded-lg text-black font-semibold  my-2 flex flex-row py-3 justify-center cursor-pointer transition ease-in-out  hover:-translate-y-1 hover:scale-10 duration-300'>
+      {/*<div className='w-full px-3  rounded-lg   font-semibold  my-2 flex flex-row py-3 justify-center cursor-pointer transition ease-in-out  hover:-translate-y-1 hover:scale-10 duration-300'>
         <div className=' w-16 flex-none h-14'>
           {cardType === 'feedback' ? (
             <CustomVoteUp iconSize={24} deger={1} />
@@ -37,7 +45,28 @@ const FeedbackCard = ({ cardType }: Props) => {
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
+      <Card className='w-full px-3 hover:-translate-y-1 hover:scale-10 duration-300'>
+        <CardHeader className='w-full flex flex-row'>
+          <div className=' w-16 flex-none h-14'>
+            {cardType === 'feedback' ? (
+              <CustomVoteUp iconSize={24} deger={1} />
+            ) : (
+              <div className='text-center border-2 border-slate-300 rounded-lg font-bold'>
+                <span className='text-lg'>12</span>
+                <p className='text-xs'>open features</p>
+              </div>
+            )}
+          </div>
+          <CardTitle className='grow'>asda</CardTitle>
+          <div className='flex'>
+            <MessageCircle strokeWidth={2} className='mr-1' />4
+          </div>
+        </CardHeader>
+        <CardContent>
+          <p>Card Content</p>
+        </CardContent>
+      </Card>
     </>
   );
 };

@@ -1,4 +1,5 @@
 import mongoose, { Schema } from 'mongoose';
+import Product from './product';
 
 const userSchema = new Schema(
   {
@@ -6,28 +7,38 @@ const userSchema = new Schema(
       type: String,
       unique: true,
       required: true,
-      lowercase: true
+      lowercase: true,
     },
     password: {
       required: true,
-      type: String
+      type: String,
     },
     fullName: {
-      type: String
+      type: String,
     },
     company: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Company'
+      ref: 'Company',
     },
     customerCompany: String,
-    notifications: [{
-      title: String,
-      value: Boolean
-    }],
-    feedbacks: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Feedback'
-    }]
+    notifications: [
+      {
+        title: String,
+        value: Boolean,
+      },
+    ],
+    feedbacks: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Feedback',
+      },
+    ],
+    productIncluded: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product',
+      },
+    ],
   },
   {
     timestamps: true,

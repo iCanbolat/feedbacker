@@ -51,16 +51,16 @@ const FeedbackModalContent = (props: Props) => {
   };
   return (
     <>
-    <DialogHeader className='text-black'>
+    <DialogHeader>
       <DialogTitle className='flex h-[3rem] mb-2'>
         <div className='flex-none w-12'>
           <CustomVoteButton iconSize={20} deger={1} />
         </div>
         <div className='grow'>
-          <p className='mt-2.5 ml-2 text-lg'>Dark Theme</p>
+          <p className='mt-2.5 ml-2 text-lg text-secondary-foreground'>Dark Theme</p>
         </div>
       </DialogTitle>
-      <div className='flex w-full h-10 items-center text-black'>
+      <div className='flex w-full h-10 items-center'>
         <CustomSelect />
         <CustomSelect />
         <CustomSelect />
@@ -81,8 +81,8 @@ const FeedbackModalContent = (props: Props) => {
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </div>
-          <div className='grow text-black px-2 pt-1'>
-            <p className=' text-blue-600 font-semibold mb-2'>
+          <div className='grow px-2 pt-1'>
+            <p className=' text-primary font-semibold mb-2'>
               John Doe
             </p>
             <p>

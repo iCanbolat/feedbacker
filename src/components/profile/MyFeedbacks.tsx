@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+import FeedbackCard from '../FeedbackCard';
 
-type Props = {}
+type Props = {};
 
 const MyFeedbacks = (props: Props) => {
   return (
-    <div>MyFeedbacks</div>
-  )
-}
+    <div className='mt-5 space-y-6'>
+      <FeedbackCard cardType='feedback' />
 
-export default MyFeedbacks
+      <FeedbackCard cardType='feedback' />
+    </div>
+  );
+};
+
+export default MyFeedbacks;

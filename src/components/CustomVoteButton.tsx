@@ -22,10 +22,7 @@ const CustomVoteButton = ({
   const [value, setValue] = useState(deger);
 
   const handleClick = () => {
-    console.log('bastı');
     setValue(value + 1);
-    console.log(deger);
-
     setToggle(!toggle);
   };
   return (
@@ -37,14 +34,14 @@ const CustomVoteButton = ({
     >
       <ChevronUp
         className='cursor-pointer transition ease-in-out  hover:-translate-y-1 hover:scale-10 duration-300'
-        color={toggle ? 'red' : 'black'}
+        color={toggle ? 'green' : 'white'}
         size={iconSize}
         strokeWidth={toggle ? 3 : 2}
         onClick={handleClick}
       />
       <div
         style={{ fontSize }}
-        className='flex space-x-0 overflow-hidden rounded bg-white px-2 leading-none text-gray-900'
+        className='flex space-x-0 overflow-hidden rounded bg-transparent px-2 leading-none text-primary'
       >
         {deger > 9 || (value > 9 && <Digit place={10} value={value} />)}
         <Digit place={1} value={value} />

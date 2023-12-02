@@ -2,20 +2,29 @@ import mongoose, { Schema } from 'mongoose';
 
 const productSchema = new Schema(
   {
-    feedbacks: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Feedback'
-    }],
+    feedbacks: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Feedback',
+      },
+    ],
     company: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Company'
+      ref: 'Company',
     },
     name: String,
-    isPublic: Boolean
-  }, {
-  timestamps: true
-}
+    staffUsers: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+      },
+    ],
+  },
+  {
+    timestamps: true,
+  }
 );
-const Product = mongoose?.models?.Product || mongoose.model('Product', productSchema);
+const Product =
+  mongoose?.models?.Product || mongoose.model('Product', productSchema);
 
 export default Product;

@@ -13,7 +13,7 @@ commentSchema.add({
 
 const feedbackSchema = new Schema(
   {
-    product: {
+    productName: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Product',
     },
@@ -28,7 +28,6 @@ const feedbackSchema = new Schema(
       },
     ],
     comments: [commentSchema],
-    owner: String,
     status: String,
     context: String,
     vote: String,

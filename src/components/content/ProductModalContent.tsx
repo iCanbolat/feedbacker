@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import {
   Dialog,
@@ -32,16 +33,16 @@ const ProductModalContent = (props: Props) => {
 
   return (
     <>
-      <DialogHeader className='text-black'>
+      <DialogHeader>
         <DialogTitle className='flex  mb-2'>
           <div className='flex-none w-16'>
-            <div className='text-center border-2 border-slate-300 rounded-lg font-bold'>
+            <div className='text-center border-2 border-slate-300 rounded-lg font-bold  text-primary'>
               <span className='text-lg'>12</span>
               <p className='text-xs'>open features</p>
             </div>
           </div>
           <div className='grow'>
-            <p className='mt-2.5 ml-2 text-lg'>Twitter Social Media App</p>
+            <p className='mt-2.5 ml-2 text-lg text-primary'>Twitter Social Media App</p>
           </div>
         </DialogTitle>
         <DialogDescription>Created by Twitter</DialogDescription>

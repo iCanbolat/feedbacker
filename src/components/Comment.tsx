@@ -10,7 +10,7 @@ const Comment = ({ data, indent }: { data?: any; indent: number }) => {
   return (
     <>
       <div
-        className={`w-full my-5 border-2 rounded-lg p-1 bg-slate-200 border-slate-300`}
+        className={`w-full my-5 border-2 rounded-lg p-1 dark:bg-muted border-slate-600`}
         style={{ marginLeft: indent * 2 + 'px' }}
       >
         <div className='flex w-full my-2'>
@@ -20,9 +20,9 @@ const Comment = ({ data, indent }: { data?: any; indent: number }) => {
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </div>
-          <div className='grow text-black px-2 pt-1'>
+          <div className='grow text-primary px-2 pt-1'>
             <div className='flex'>
-            <p className=' text-blue-600 font-semibold mb-2'>{data.user}</p>
+            <p className=' text-primary font-semibold mb-2'>{data.user}</p>
             <Button variant={'link'} className='h-6'>reply</Button>
             </div>
             <p>{data.context}</p>
